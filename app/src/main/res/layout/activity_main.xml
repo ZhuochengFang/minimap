@@ -7,10 +7,71 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.baidu.mapapi.map.MapView
-        android:id="@+id/mapView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clickable="true"/>
+        android:orientation="vertical">
+        <!-- 顶部的紫色背景LinearLayout，包含一个居中的TextView -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_700"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <!-- 显示标题文字，颜色为白色，字号为20sp -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fzc的定位器"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <!-- 中间部分，包含两个RadioButton和两个CheckBox -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- 单选按钮组，用于选择地图类型 -->
+            <RadioGroup
+                android:id="@+id/id_rp_maptype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checkedButton="@id/id_btn_normal"
+                android:orientation="horizontal">
+                <!-- 普通地图单选按钮 -->
+                <RadioButton
+                    android:id="@+id/id_btn_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="普通地图" />
+                <!-- 卫星地图单选按钮 -->
+                <RadioButton
+                    android:id="@+id/id_btn_satellite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卫星地图" />
+            </RadioGroup>
+            <!-- 路况图复选框 -->
+            <CheckBox
+                android:id="@+id/id_cb_trafficEnabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="开启路况图" />
+            <!-- 热力图复选框 -->
+            <CheckBox
+                android:id="@+id/id_cb_heatMapEnabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="开启热力图" />
+        </LinearLayout>
+        <!-- 百度地图视图 -->
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
