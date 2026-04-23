@@ -26,6 +26,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
         </LinearLayout>
+
         <!-- 中间部分，包含两个RadioButton和两个CheckBox -->
         <LinearLayout
             android:layout_width="wrap_content"
@@ -51,6 +52,7 @@
                     android:layout_height="wrap_content"
                     android:text="卫星地图" />
             </RadioGroup>
+
             <!-- 路况图复选框 -->
             <CheckBox
                 android:id="@+id/id_cb_trafficEnabled"
@@ -66,12 +68,45 @@
                 android:checked="false"
                 android:text="开启热力图" />
         </LinearLayout>
+
         <!-- 百度地图视图 -->
-        <com.baidu.mapapi.map.MapView
-            android:id="@+id/bmapView"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clickable="true" />
+            android:layout_height="match_parent">
+
+            <com.baidu.mapapi.map.MapView
+                android:id="@+id/bmapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true">
+
+                <Button
+                    android:id="@+id/btn_locate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#6750a4"
+                    android:padding="10dp"
+                    android:text="我的位置"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_locator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#6750a4"
+                    android:padding="10dp"
+                    android:text="定位器位置"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

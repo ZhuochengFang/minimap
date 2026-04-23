@@ -8,6 +8,22 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+        <!-- 定位显示   -->
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!--  如果无法获取位置/位置获取不对-请检查鉴权信
+    息！！！！！！！！！！！！！！！！！-  -->
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行
+    网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!-- 用于读取手机当前的状态 获取手机传感器的数据 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
         
     <application
         android:name=".MapApp"
@@ -23,6 +39,9 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="UdkekVeUqALg4m1KRMUXRh77Vy8H7RFi" />
+        <service android:name="com.baidu.location.f"
+                android:enabled="true"
+                android:process=":remote"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
